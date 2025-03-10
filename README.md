@@ -39,4 +39,4 @@ SMCFIXER comprising three key modules: code slicing, knowledge retrieval, and pa
 
 ## Usage
 First download the relevant dependencies
-‘pip install -r requirements.txt’
+`pip install -r requirements.txt`
