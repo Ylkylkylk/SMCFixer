@@ -10,6 +10,7 @@ adapt. Our study systematically investigates these challenges by
 analyzing the impact of Solidity version evolution, revealing that
 81.69% of examined contracts encounter errors when compiled
 across different versions, with 86.92% of compilation errors.
+
 To address these issues, we evaluated the effectiveness of large
 language models (LLMs) in resolving Solidity compilation errors
 caused by version migrations. Through extensive experiments
@@ -19,6 +20,7 @@ demonstrate potential to fix errors, their performance varies
 significantly depending on the type of error and prompt granu-
 larity. Our findings highlight the importance of domain-specific
 knowledge in improving LLM-driven solutions for Solidity repair.
+
 Based on these insights, we propose SMCFIXER, a novel
 framework that integrates expert knowledge retrieval and LLM-
 based repair mechanisms to enhance Solidity compilation error
