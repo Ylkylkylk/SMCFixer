@@ -38,4 +38,5 @@ SMCFIXER comprising three key modules: code slicing, knowledge retrieval, and pa
 ![Framework of SMCFixer](./picture/framework.png)
 
 ## Usage
-
+First download the relevant dependencies
+‘pip install -r requirements.txt’
