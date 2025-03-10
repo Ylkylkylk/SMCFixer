@@ -44,26 +44,26 @@ Solidity’s rapid evolution (84 versions,
 migration. Version gaps often trigger compilation errors
 (71% of changes introduce such issues), underscoring
 developers’ struggles to keep pace with language updates.
-!(./picture/rq1-1)
-!(./picture/rq1-2)
+![rq1](./picture/rq1-1)
+![rq1](./picture/rq1-2)
 ### RQ2: Can LLMs help solve the challenges brought by the Solidity version evolutions mentioned above? 
 LLMs exhibit varying capabilities in resolving Solidity compilation errors, with performance differing significantly across error types. Increasing prompt
 granularity directly enhances their effectiveness in addressing these issues.
-!(./picture/rq2)
+![rq2](./picture/rq2)
 ### RQ3: How does our approach perform in fixing errors?
 We compare our approach with open-source and closed-source LLMs to verify the overall performance of SMCFIXER fixing compile errors.
 Our method boosts LLMs' ability to fix Solidity errors from version updates, surpassing standalone models and reducing performance disparities between smaller and larger LLMs in diverse errors.
-!(./picture/rq3)
+![rq3](./picture/rq3)
 ### RQ4: How do our selected design choices perform? 
 We first perform ablation studies to validate the effectiveness of the module, then evaluate the performance of the retrieval approach.
 Our approach relies on two key components: code slicing and retrieval mechanisms. The retrieval mechanism plays a vital role in performance enhancement, while setting a maximum loop iteration of 5 proves most efficient for error correction.
-!(./picture/rq4-1)
-!(./picture/rq4-2)
-!(./picture/rq4-3)
+![rq4](./picture/rq4-1)
+![rq4](./picture/rq4-2)
+![rq4](./picture/rq4-3)
 ### RQ5: How does our approach perform in handling real-world completion errors? 
 We test the effectiveness of our approach using GitHub/Stack Overflow smart contracts.
 SMCFixer is highly effective for resolving Solidity version-related compilation errors in real-world scenarios, narrowing the performance gap between proprietary and open-source models and significantly enhancing their overall error correction capabilities.
-!(./picture/rq5)
+![rq5](./picture/rq5)
 
 ## Usage
 First Install the required Python packages
