@@ -40,15 +40,15 @@ SMCFIXER comprising three key modules: code slicing, knowledge retrieval, and pa
 ## Usage
 First Install the required Python packages
 
-`$ pip install -r requirements.txt`
+    `pip install -r requirements.txt`
 
 Install Solidity compiler `solcjs`
 
-`npm install -g solc`
+    `npm install -g solc`
 
 You can use SMCFIXER with the following command-line instruction：
 
-`python solidity_assistant.py --file <path_to_solidity_file> [options]`
+    `python solidity_assistant.py --file <path_to_solidity_file> [options]`
 
 | options   | Description |
 | ------ | ---- | 
@@ -58,7 +58,7 @@ You can use SMCFIXER with the following command-line instruction：
 
 Example:
 
-`python solidity_assistant.py --file contracts/MyContract.sol --top1`
+    `python solidity_assistant.py --file contracts/MyContract.sol --top1`
 
 
 
