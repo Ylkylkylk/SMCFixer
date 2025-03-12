@@ -88,7 +88,7 @@ Install Solidity compiler `solcjs`
 
 You can use SMCFIXER with the following command-line instruction：
 
-    `python solidity_assistant.py --file <path_to_solidity_file> [options]`
+    python solidity_assistant.py --file <path_to_solidity_file> [options]
 
 | options   | Description |
 | ------ | ---- | 
