@@ -162,8 +162,15 @@ Please combine the following solidity knowledges, uncompilable code and error me
         stream=False
     )
     text = response.choices[0].message.content
-    print(text)
-    return text
+    result = f"""
+    <<<<<< SEARCH
+    {error_code}
+    ============================
+    {text}
+    >>>>>> REPLACE
+    """
+    print(result)
+    return result
 
 # Retrieve the top-3 knowledge
 def get_top3(error_message, context_embedding, error_code):
@@ -199,8 +206,15 @@ Please combine the following solidity knowledges, uncompilable code and error me
         stream=False
     )
     text = response.choices[0].message.content
-    print(text)
-    return text
+    result = f"""
+    <<<<<< SEARCH
+    {error_code}
+    ============================
+    {text}
+    >>>>>> REPLACE
+    """
+    print(result)
+    return result
 
 # Retrieve the top-5 knowledge
 def get_top5(error_message, context_embedding, error_code):
@@ -236,5 +250,12 @@ Please combine the following solidity knowledges, uncompilable code and error me
         stream=False
     )
     text = response.choices[0].message.content
-    print(text)
-    return text
+    result = f"""
+    <<<<<< SEARCH
+    {error_code}
+    ============================
+    {text}
+    >>>>>> REPLACE
+    """
+    print(result)
+    return result
