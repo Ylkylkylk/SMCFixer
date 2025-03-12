@@ -59,17 +59,17 @@ def main():
     max_attempts = 5
 
     if args.top1:
-        test_function = get_top1()
+        run_function = get_top1()
     elif args.top3:
-        test_function = get_top3()
+        run_function = get_top3()
     elif args.top5:
-        test_function = get_top5()
+        run_function = get_top5()
 
     while not success and attempts < max_attempts:
         print(f"Compile failed, attempt {attempts + 1} processing error...")
         cleaned_error_message = clean_error_message(output_or_error)
         slim_code = get_slimcode(solidity_file,output_or_error)
-        modified_code = test_function(cleaned_error_message, context_embeddings, slim_code)
+        modified_code = run_function(cleaned_error_message, context_embeddings, slim_code)
         clean_modified_code = extract_solidity_code(modified_code)
 
         temp_file_path = 'test.sol'
