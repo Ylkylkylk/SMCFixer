@@ -78,7 +78,7 @@ SMCFixer is highly effective for resolving Solidity version-related compilation 
 ![rq5](./picture/rq5.png)
 
 ## Usage
-First Install the required Python packages
+First install the required Python packages
 
     pip install -r requirements.txt
 
@@ -88,7 +88,7 @@ Install Solidity compiler `solcjs`
 
 You can use SMCFIXER with the following command-line instruction：
 
-    python solidity_assistant.py --file <path_to_solidity_file> [options]
+    python SMCFixer_run.py --file <path_to_solidity_file> [options]
 
 | options   | Description |
 | ------ | ---- | 
@@ -98,7 +98,7 @@ You can use SMCFIXER with the following command-line instruction：
 
 Example:
 
-    python solidity_assistant.py --file contracts/MyContract.sol --top1
+    python SMCFixer_run.py --file contracts/MyContract.sol --top1
 
 
 
