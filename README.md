@@ -33,49 +33,32 @@ significantly improves repair accuracy across various Solidity
 versions, achieving a 24.24% improvement over standalone GPT-
 4o on real-world datasets, with a peak accuracy of 96.97%
 
-## Overall Framework
-SMCFIXER comprising three key modules: code slicing, knowledge retrieval, and patch generation. Given a Solidity code file, we first use Remix [18] to attempt compilation. If the file fails to compile, our approach automatically generates patches by leveraging the compiler’s error messages and relevant expert knowledge. 
+## Data
+SMCFIXER is designed for evaluating the ability of large language models (LLMs) to fix Solidity compilation errors caused by version migrations. It provides three datasets:
 
-![Framework of SMCFixer](./picture/framework.png)
+### 📊 Statistics
+- **DATASET-A**: Automatically generated dataset based on official Solidity breaking changes.
+- **DATASET-B**: Benchmark dataset for evaluating patch generation performance.
+- **DATASET-C**: Real-world dataset collected from open-source platforms.
 
-## Evaluation
-### RQ1: What is the current state of Solidity version evolution, and what challenges does it pose? 
-Solidity’s rapid evolution (84 versions,
-131 major changes) poses challenges during smart contract
-migration. Version gaps often trigger compilation errors
-(71% of changes introduce such issues), underscoring
-developers’ struggles to keep pace with language updates.
+Each dataset contains Solidity code instances with version-specific compilation errors and their corresponding fixed versions. These datasets enable both correctness and robustness evaluation for LLM-based repair systems.
 
-![rq1](./picture/rq1-1.png)
+| Dataset    | #Instance | #BreakingChange | #ErrorTypes                              |
+|------------|-----------|------------------|-------------------------------------------|
+| DATASET-A  | 2050      | 131              | Parser, Declaration, Syntax, Type         |
+| DATASET-B  | 1460      | 93               | Parser, Declaration, Syntax, Type         |
+| DATASET-C  | 33        | —                | Real-world Solidity compilation failures  |
 
-![rq1](./picture/rq1-2.png)
-### RQ2: Can LLMs help solve the challenges brought by the Solidity version evolutions mentioned above? 
-LLMs exhibit varying capabilities in resolving Solidity compilation errors, with performance differing significantly across error types. Increasing prompt
-granularity directly enhances their effectiveness in addressing these issues.
+### 📂 File Descriptions
+- `Dataset/dataset_A/`:  
+  Automatically generated with GPT-4 based on 131 documented breaking changes in Solidity. Used to train and evaluate the retriever and generation components.
 
-![rq2](./picture/rq2.png)
+- `Dataset/dataset_B/`:  
+  A curated subset of DATASET-A, focusing on 93 compilation-related breaking changes. Used in model comparison and ablation studies.
 
-### RQ3: How does our approach perform in fixing errors?
-We compare our approach with open-source and closed-source LLMs to verify the overall performance of SMCFIXER fixing compile errors.
-Our method boosts LLMs' ability to fix Solidity errors from version updates, surpassing standalone models and reducing performance disparities between smaller and larger LLMs in diverse errors.
+- `Dataset/dataset_C/`:  
+  Real-world smart contracts from GitHub, OpenZeppelin, Reddit, and Stack Overflow. Each contract fails to compile due to version migration issues and requires repair.
 
-![rq3](./picture/rq3.png)
-
-### RQ4: How do our selected design choices perform? 
-We first perform ablation studies to validate the effectiveness of the module, then evaluate the performance of the retrieval approach.
-Our approach relies on two key components: code slicing and retrieval mechanisms. The retrieval mechanism plays a vital role in performance enhancement, while setting a maximum loop iteration of 5 proves most efficient for error correction.
-
-![rq4](./picture/rq4-1.png)
-
-![rq4](./picture/rq4-2.png)
-
-![rq4](./picture/rq4-3.png)
-
-### RQ5: How does our approach perform in handling real-world completion errors? 
-We test the effectiveness of our approach using GitHub/Stack Overflow smart contracts.
-SMCFixer is highly effective for resolving Solidity version-related compilation errors in real-world scenarios, narrowing the performance gap between proprietary and open-source models and significantly enhancing their overall error correction capabilities.
-
-![rq5](./picture/rq5.png)
 
 ## Usage
 First install the required Python packages
