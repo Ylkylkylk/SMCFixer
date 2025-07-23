@@ -50,13 +50,13 @@ Each dataset contains Solidity code instances with version-specific compilation 
 | DATASET-C  | 33        | —                | Real-world Solidity compilation failures  |
 
 ### 📂 File Descriptions
-- `Dataset/dataset_A/`:  
+- `Dataset/dataset_A.json/`:  
   Automatically generated with GPT-4 based on 131 documented breaking changes in Solidity. Used to train and evaluate the retriever and generation components.
 
-- `Dataset/dataset_B/`:  
+- `Dataset/dataset_B.json/`:  
   A curated subset of DATASET-A, focusing on 93 compilation-related breaking changes. Used in model comparison and ablation studies.
 
-- `Dataset/dataset_C/`:  
+- `Dataset/dataset_C.json/`:  
   Real-world smart contracts from GitHub, OpenZeppelin, Reddit, and Stack Overflow. Each contract fails to compile due to version migration issues and requires repair.
 
 
